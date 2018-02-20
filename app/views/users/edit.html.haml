@@ -1,0 +1,52 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ReviewSpace
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "DzvK2028fneywWF8QpyRDmcDupv1M90hFieXpkRNT9wI1y16vQFh17WqFJ9Ookha+k+gV+qwIp8q/YWuUZ3odQ==", :name => "csrf-token"}/
+    %link{:href => "/assets/application-c617cd3cc56ea5db583836527c3a19ec935e32bc3e23710c957791a1d7ac6c38.css", :media => "all", :rel => "stylesheet"}/
+    %script{:src => "/javascripts/application.js"}
+  %body
+    .notification
+    #account-page.account-page
+      .account-page__inner.clearfix
+        .account-page__inner--left.account-page__header
+          %h2 Edit Account
+          %h5 アカウントの編集
+          %a.btn{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"} ログアウト
+          %a.btn{:href => "https://chatspacet.herokuapp.com/"} トップページに戻る
+        .account-page__inner--right.user-form
+          %form#edit_user.edit_user{"accept-charset" => "UTF-8", :action => "/users", :method => "post"}
+            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+            %input{:name => "_method", :type => "hidden", :value => "put"}/
+            %input{:name => "authenticity_token", :type => "hidden", :value => "NRydOSwjn3krrXmN/y2Z6m/VcNEG5A5d2iF+FwV286Uy8HqY3J6A2SzGDG7zE0C+8plqHRln8ePm+2wfEKZUDA=="}/
+            .field
+              .field-label
+                %label{:for => "user_name"} Name
+              .field-input
+                %input#user_name{:autofocus => "autofocus", :name => "user[name]", :type => "text", :value => "inuneco"}/
+            .field
+              .field-label
+                %label{:for => "user_email"} Email
+              .field-input
+                %input#user_email{:name => "user[email]", :type => "email", :value => "inu@gmail.com"}/
+            .field
+              .field-label
+                %label{:for => "user_password"} Password
+                %i (変更したくない場合は、空白のままにしておいてください)
+              .field-input
+                %input#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}/
+            .field
+              .field-label
+                %label{:for => "user_password_confirmation"} Password confirmation
+              .field-input
+                %input#user_password_confirmation{:autocomplete => "off", :name => "user[password_confirmation]", :type => "password"}/
+            .field
+              .field-label
+                %label{:for => "user_current_password"} Current password
+                %i (変更には現在のパスワードの入力が必要です)
+              .field-input
+                %input#user_current_password{:autocomplete => "off", :name => "user[current_password]", :type => "password"}/
+            .actions
+              %input.btn{"data-disable-with" => "Update", :name => "commit", :type => "submit", :value => "Update"}/
