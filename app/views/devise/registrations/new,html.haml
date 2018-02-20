@@ -1,0 +1,45 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ReviewSpace
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "PDEPXBgP//BTahhmPCUwdx6+ujJ91X1o8M9/9vVHzUHRyt/fIiDkAu1/LbFaEff+y9Xs71dxezwz0CVpIjQ6/Q==", :name => "csrf-token"}/
+    %link{:href => "/assets/application-c617cd3cc56ea5db583836527c3a19ec935e32bc3e23710c957791a1d7ac6c38.css", :media => "all", :rel => "stylesheet"}/
+    %script{:src => "/javascripts/application.js"}
+  %body
+    .notification
+    #account-page.account-page
+      .account-page__inner.clearfix
+        .account-page__inner--left.account-page__header
+          %h2 Create Account
+          %h5 新規アカウントの作成
+          %a.btn{:href => "/users/sign_in"} Log in
+          %br/
+        .account-page__inner--right.user-form
+          %form#new_user.new_user{"accept-charset" => "UTF-8", :action => "/users", :method => "post"}
+            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+            %input{:name => "authenticity_token", :type => "hidden", :value => "Mi5vJ3MVOC3eJc6Of9amLxfTeTgrt2/vULVW+TRnvx3f1b+kSToj32Aw+1kZ4mGmwrgv5QETabuTqgxm4xRIoQ=="}/
+            .field
+              .field-label
+                %label{:for => "user_name"} Name
+              .field-input
+                %input#user_name{:autofocus => "autofocus", :name => "user[name]", :type => "text"}/
+            .field
+              .field-label
+                %label{:for => "user_email"} Email
+              .field-input
+                %input#user_email{:name => "user[email]", :type => "email", :value => ""}/
+            .field
+              .field-label
+                %label{:for => "user_password"} Password
+                %i (英数字8文字以上)
+              .field-input
+                %input#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}/
+            .field
+              .field-label
+                %label{:for => "user_password_confirmation"} Password confirmation
+              .field-input
+                %input#user_password_confirmation{:autocomplete => "off", :name => "user[password_confirmation]", :type => "password"}/
+            .actions
+              %input.btn{"data-disable-with" => "Create Account", :name => "commit", :type => "submit", :value => "Create Account"}/
