@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ReviewSpace
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "vh2VKFjlqt3gkR+VHJs5xcPE+jwjVkIp5fR4dYaTPKO58XKJqFi1fef6anYQpeCRXojg8DzVvZfZLmp9k0ObCg==", :name => "csrf-token"}/
+    %link{:href => "/assets/application-c617cd3cc56ea5db583836527c3a19ec935e32bc3e23710c957791a1d7ac6c38.css", :media => "all", :rel => "stylesheet"}/
+    %script{:src => "/javascripts/application.js"}
+  %body
+    .notification
+    .chat-side
+      .chat-side__user
+        .chat-side__user-content
+          .chat-side__user-name
+            = message.user.name
+          %a.chat-side__user--new-group{:href => "/groups/new"}
+            %i.fa.fa-pencil-square-o
+          %a.chat-side__user--edit-user{:href => "/users/edit"}
+            %i.fa.fa-cog
+      .chat-side__groups
+        .chat-side__groups-list
