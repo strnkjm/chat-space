@@ -1,0 +1,46 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ReviewSpace
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "mcJRCxslBWmqoUV+1rpl2qLcxGO93ODhq8seIA4QQu+eLraq65gaya3KMJ3ahLyOP5Der6JfH1+XEQwoG8DlRg==", :name => "csrf-token"}/
+    %link{:href => "/assets/application-c617cd3cc56ea5db583836527c3a19ec935e32bc3e23710c957791a1d7ac6c38.css", :media => "all", :rel => "stylesheet"}/
+    %script{:src => "/javascripts/application.js"}
+  %body
+    .notification
+    .chat-group-form
+      %h1
+        新規チャットグループ
+      %form#new_group.new_group{"accept-charset" => "UTF-8", :action => "/groups", :method => "post"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %input{:name => "authenticity_token", :type => "hidden", :value => "hOECHgEHJyIIsoSuaDJ2qMl5Au+RhXz8icKkjRRZ7AqDDeW/8bo4gg/Z8U1kDK/8VDUYI44Gg0K1GLaFAYlLow=="}/
+        .chat-group-form__field.clearfix
+          .chat-group-form__field--left
+            %label.chat-group-form__label{:for => "group_name"} Name
+          .chat-group-form__field--right
+            %input#group_name.chat-group-form__input{:name => "group[name]", :placeholder => "グループ名を入力してください", :type => "text"}/
+        .chat-group-form__field.clearfix
+          .chat-group-form__field--left
+            %label.chat-group-form__label{:for => "group_チャットメンバーを追加"} チャットメンバーを追加
+          .chat-group-form__field--right
+            .chat-group-form__search.clearfix
+              %input#user-search-field.chat-group-form__input{:name => "group[id]", :placeholder => "追加したいユーザー名を入力してください", :type => "text", :value => ""}/
+            / - if @users.blank?
+            / 追加するユーザーがいません
+            / - else
+            / = f.collection_check_boxes :user_ids, @users, :id, :name
+            #user-search-result
+        .chat-group-form__field.clearfix
+          .chat-group-form__field--left
+            %label.chat-group-form__label{:for => "group_チャットメンバー"} チャットメンバー
+          .chat-group-form__field--right
+            #chat-group-users
+              .chat-group-user.clearfix
+                %input#group_user_ids{:name => "group[user_ids][]", :type => "hidden", :value => "329"}/
+                %p.chat-group-user__name
+                  = message.user.name
+        .chat-group-form__field.clearfix
+          .chat-group-form__field--left
+          .chat-group-form__field--right
+            %input.chat-group-form__action-btn{"data-disable-with" => "Save", :name => "commit", :type => "submit", :value => "Save"}/
