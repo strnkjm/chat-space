@@ -1,0 +1,179 @@
+.notification {
+    width: 100vw;
+    height: 20px;
+    background-color: $header-color;
+    border-bottom: solid 1px $header-color;
+    &__notice {
+      color: white;
+      text-align: center;
+    }
+  }
+.contents {
+  height: 100vh;
+  width: 100vw;
+  &_side {
+    width: 300px;
+    height: 100vh;
+    float: left;
+    position: fixed;
+    &--user {
+      height: 100px;
+      line-height: 100px;
+      padding: 0 20px;
+      background-color: $user-color;
+      h1 {
+        font-size: 16px;
+        color: $white;
+        font-weight: bold;
+      .icon-list {
+        float: right;
+      i {
+        color: $white;
+         }
+       }
+     }
+   }
+    &--groups {
+      height: calc(100vh - 100px);
+      background-color: $list-color;
+      padding: 0 20px;
+      overflow: auto;
+      ul {
+        padding: 20px 0 40px;
+        height: 100vh;
+      }
+        a {
+          text-decoration: none;
+        }
+        .group-name {
+          font-size: 15px;
+          padding-top: 20px;
+          color: $white;
+        }
+        .group-message {
+          font-size: 11px;
+          color: $white;
+          padding: 5px 0 40px 0;
+        }
+      }
+    }
+  &_main {
+  width: calc(100vw - 300px);
+  background-color: $white;
+  float: right;
+  height: 100vh;
+    &--header {
+    width: 100%;
+    height: 100px;
+    background-color: $white;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-bottom-style: solid;
+    border-bottom-color: #eeeeee;
+    position: fixed;
+      h1 {
+        color: #333333;
+        font-size: 20px;
+        margin-top: 35px;
+        padding-bottom: 15px;
+      }
+        .btn-edit {
+          position: absolute;
+          right: 20px;
+          top: 48px;
+          height: 40px;
+          float: right;
+          border: solid 1px #38AEF0;
+          position: fixed;
+        }
+          a {
+            text-decoration: none;
+          }
+          .p {
+            vertical-align: middle;
+            padding: 7px 20px;
+            color: $header-color;
+            font-size: 16px;
+            text-align: center;
+          }
+          .group-members {
+            color: $members-color;
+            font-size: 12px;
+            padding-top: 15px;
+      }
+    }
+    &--body {
+      background-color: $white;
+      padding: 40px 40px;
+      height: calc(100vh - 100px - 90px);
+      overflow: auto;
+      display: flex;
+      ul {
+        margin-bottom: 40px;
+        .message-name {
+          color: $message-color;
+          font-size: 16px;
+          font-weight: bold;
+          float: left;
+        }
+        .message-time {
+           font-size: 12px;
+           padding-left: 10px;
+           float: left;
+        }
+        .message-body {
+          padding-top: 10px;
+          font-size: 14px;
+          color: $message-color;
+          clear: both;
+          padding-bottom: 40px;
+        }
+      }
+    }
+    &--footer {
+      background-color: $footer-color;
+      height: 90px;
+      bottom: 0;
+      right: 0;
+      width: calc(100vw - 300px);
+      position: fixed;
+      box-sizing: border-box;
+      .message-form {
+        padding: 20px 40px;
+        height: 90px;
+        box-sizing: border-box;
+      .message-text {
+        color: $footer-color;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 10px;
+        float: left;
+        width: calc(100% - 150px);
+        border: none;
+        box-sizing: border-box;
+      }
+        .image-form {
+          background-color: $white;
+          float: left;
+          padding-right: 10px;
+          height: 50px;
+        }
+        i {
+          line-height: 50px;
+          font-size: 20px;
+        }
+      }
+      .message-submit {
+        background-color: $header-color;
+        border: none;
+        color: $white;
+        font-size: 16px;
+        height: 50px;
+        padding: 0 20px;
+        position: absolute;
+        bottom: 20px;
+        right: 40px;
+      }
+    }
+  }
+}
