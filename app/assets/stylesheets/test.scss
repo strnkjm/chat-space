@@ -1,13 +1,3 @@
-.notification {
-    width: 100vw;
-    height: 20px;
-    background-color: $header-color;
-    border-bottom: solid 1px $header-color;
-    &__notice {
-      color: white;
-      text-align: center;
-    }
-  }
 .contents {
   height: 100vh;
   width: 100vw;
@@ -16,47 +6,53 @@
     height: 100vh;
     float: left;
     position: fixed;
-    &--user {
-      height: 100px;
-      line-height: 100px;
-      padding: 0 20px;
-      background-color: $user-color;
-      h1 {
-        font-size: 16px;
-        color: $white;
-        font-weight: bold;
-      .icon-list {
-        float: right;
-      i {
-        color: $white;
-         }
-       }
-     }
-   }
-    &--groups {
-      height: calc(100vh - 100px);
-      background-color: $list-color;
-      padding: 0 20px;
-      overflow: auto;
-      ul {
-        padding: 20px 0 40px;
-        height: 100vh;
+  .side-bar {
+  box-sizing: border-box;
+  color: $white;
+  width: 300px;
+  .header {
+    background-color: $side_blue_dark;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
+    &__name {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__lists {
+      display: inline-block;
+      float: right;
+      .list {
+        display: inline-block;
       }
-        a {
-          text-decoration: none;
-        }
-        .group-name {
-          font-size: 15px;
-          padding-top: 20px;
-          color: $white;
-        }
-        .group-message {
-          font-size: 11px;
-          color: $white;
-          padding: 5px 0 40px 0;
-        }
+      .icon {
+        color: $white;
+        font-size: 16px;
       }
     }
+  }
+}
+
+  .groups {
+    background-color: $side_blue_light;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    .group {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__name {
+        color: $white;
+        font-size: 14px;
+      }
+      &__message {
+        color: $white;
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
   &_main {
   width: calc(100vw - 300px);
   background-color: $white;
@@ -83,7 +79,7 @@
           top: 48px;
           height: 40px;
           float: right;
-          border: solid 1px #38AEF0;
+          border: solid 1px $light_blue;
           position: fixed;
         }
           a {
@@ -92,12 +88,12 @@
           .p {
             vertical-align: middle;
             padding: 7px 20px;
-            color: $header-color;
+            color: $light_blue;
             font-size: 16px;
             text-align: center;
           }
           .group-members {
-            color: $members-color;
+            color: $light_gray;
             font-size: 12px;
             padding-top: 15px;
       }
@@ -111,7 +107,7 @@
       ul {
         margin-bottom: 40px;
         .message-name {
-          color: $message-color;
+          color: $black;
           font-size: 16px;
           font-weight: bold;
           float: left;
@@ -124,7 +120,7 @@
         .message-body {
           padding-top: 10px;
           font-size: 14px;
-          color: $message-color;
+          color: $black;
           clear: both;
           padding-bottom: 40px;
         }
@@ -164,7 +160,7 @@
         }
       }
       .message-submit {
-        background-color: $header-color;
+        background-color: $light_blue;
         border: none;
         color: $white;
         font-size: 16px;
@@ -174,6 +170,43 @@
         bottom: 20px;
         right: 40px;
       }
+    }
+  }
+}
+
+  .form {
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    &__message {
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
+    }
+    &__mask {
+      background-color: $white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    &__submit {
+      background-color: $light_blue;
+      border: none;
+      color: $white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
     }
   }
 }
