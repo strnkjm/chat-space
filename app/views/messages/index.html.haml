@@ -1,31 +1,10 @@
-.notification
-  .notification__notice 投稿完了しました
 .contents
   .contents_side
-    .contents_side--user
-      %h1.user_name
-        satoru nakajima
-        .icon-list
-          = link_to "/users/#{}/edit" do
-            %i.fa.fa-cog
-          = link_to "/groups/new" do
-            %i.fa.fa-edit
-    .contents_side--groups
-      = render partial: "messages/groups"
+    = render partial: "messages/side_bar"
   .contents_main
     .contents_main--header
-      %h1.group-name
-        sampleグループ
-        .btn-edit
-          %a{href: "/groups/#{}/edit"}
-            .p edit
-        .group-members
-          MEMBER : satoru nakajima
+      = render partial: "messages/header"
     .contents_main--body
-      = render partial: "messages/messages"
+      = render @messages
     .contents_main--footer
-      %form.message-form
-        %input.message-text{placeholder: "type a message", type: "text"}
-        .image-form
-          %i.fa.fa-picture-o.icon
-        %input.message-submit{type: "submit", value: "Send", class: "submit"}
+      = render partial: "messages/form"
