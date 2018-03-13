@@ -1,0 +1,8 @@
+%h1.group-name
+  = Group.name
+  .btn-edit
+    = link_to edit_group_path(@group) do
+      .p edit
+  .group-members
+    - @group.users.each do |user|
+      = user.name

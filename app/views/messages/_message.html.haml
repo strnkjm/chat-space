@@ -1,0 +1,11 @@
+%ul.messages-list
+  %li.message
+    .message-name
+      = message.user.name
+    .message-time
+      = message.created_at
+    .message-body
+      - if message.content.present?
+        %p.lower-message__content
+          = message.content
+        = image_tag message.image.url, class: 'image' if message.image.present?
