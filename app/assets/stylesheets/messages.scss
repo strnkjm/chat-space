@@ -121,7 +121,8 @@
           padding-bottom: 40px;
         }
         .image {
-          height: 200px;
+          max-width: 200px;
+          max-height: 200px;
         }
     }
     &--footer {
