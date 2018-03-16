@@ -3,7 +3,7 @@
     .message-name
       = message.user.name
     .message-time
-      = message.created_at
+      = message.created_at.in_time_zone('Tokyo').strftime("%Y年%m月%d日 %H時%M分")
     .message-body
       - if message.content.present?
         %p.lower-message__content
