@@ -53,7 +53,7 @@ $(document).on('turbolinks:load', function() {
     $('#chat-group-users').append(buildHTML(user_id, user_name));
   })
 
-  $(document).on("click", ".user-search-remove", function(){
+  $(document).on("click", ".user-search-remove", false, function(){
     $(this).parent().remove();
   })
 });
