@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   function buildHTML(message){
     var text = '<ul class="message-list">' +
                   '<li class="message">' +
