@@ -54,21 +54,19 @@ $(document).on('turbolinks:load', function() {
       data: {id: id},
       dataType:'json'
     })
-    .done(function(message){
-       if(message.length !==0){
-        message.forEach(function(message){
-          var html = buildHTML(message);
-          $('.contents_main--body').append(html)
-          $('.form-message').val('')
-          $('.image').val('')
-          $('.contents_main--body').animate({scrollTop: $('.contents_main--body')[0].scrollHeight}, 3000, 'swing');
-        })
-      }
+    .done(function(messages){
+      messages.forEach(function(messages){
+        var html = buildHTML(messages);
+        $('.contents_main--body').append(html)
+        $('.form-message').val('')
+        $('.image').val('')
+        $('.contents_main--body').animate({scrollTop: $('.contents_main--body')[0].scrollHeight}, 3000, 'swing');
+      })
     })
     .fail(function(){
       alert('自動更新に失敗しました');
     })
-}else{
-  clearInterval(autoUpdate);
+    }else{
+      clearInterval(autoUpdate);
   }} , 3000 );
 });
